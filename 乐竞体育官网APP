@@ -1,0 +1,18 @@
+This code adds the nofollow attribute to all links within the content of your WordPress site. This can be useful for preventing search engines from passing link authority to external sites, which can be beneficial for SEO and reducing spam.
+
+Here's how it works:
+
+The my_nofollow function is defined, which accepts a string of content as its parameter.
+Within the my_nofollow function, the wp_rel_nofollow function is called on the content to add the nofollow attribute to all links.
+The stripslashes function is called on the result to remove any backslashes that may have been added during the process.
+The my_nofollow function is added as a filter to the the_content hook, which is called on the main content of a post or page.
+By using this code, all links within the content of your WordPress site will have the nofollow attribute added to them, which can help to prevent search engine spam and improve your SEO efforts.
+// Add nofollow
+function my_nofollow($content)
+{
+    return stripslashes(wp_rel_nofollow($content));
+}
+add_filter('the_content', 'my_nofollow');
+
+
+
