@@ -1,0 +1,11 @@
+// Do not create link path in the comments
+remove_filter('comment_text', 'make_clickable', 9);
+The code you provided is a WordPress filter that removes the "make_clickable" filter from the "comment_text" hook.
+
+By default, WordPress automatically turns URLs in comments into clickable links. However, sometimes you may not want this behavior, for example, if you want to prevent comment spam or you want to customize how URLs are displayed in comments.
+
+The "make_clickable" filter is responsible for turning URLs into clickable links, and it is added to the "comment_text" hook by default.
+
+By removing this filter from the "comment_text" hook using the code you provided, you can disable the automatic creation of clickable links in comments.
+
+It's important to note that removing this filter may affect how URLs are displayed in comments, so it should be used with caution.
